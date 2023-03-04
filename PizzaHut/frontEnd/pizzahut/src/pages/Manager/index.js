@@ -7,7 +7,7 @@ import Navbar from "../components/NavBar";
 
 
 
-const CoAdmin = () => {
+const Manager = () => {
 
 
     const [allOrders, setAllOrders] = useState([]);
@@ -144,4 +144,4 @@ const CoAdmin = () => {
 
 
 
-export default CoAdmin
+export default Manager

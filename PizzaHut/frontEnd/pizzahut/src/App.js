@@ -8,7 +8,7 @@ import AdminAddMenuVariant from './pages/AdminAddMenuVariant'
 import HomePage from './pages/HomePage/index' 
 import UserOrder from './pages/UserOrder'
 import AdminAddSize from './pages/AdminAddSize'
-import CoAdmin from './pages/CoAdmin'
+import Manager from './pages/Manager'
 import DeliveryPerson from './pages/DeliveryPerson'
 import AdminRoleChange from './pages/AdminRoleChange'
 
@@ -38,7 +38,8 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path="/userorder" element={<UserOrder/>} />
           <Route path="/adminaddsize" element={<AdminAddSize/>}/>
-          <Route path="/coadmin" element={<CoAdmin/>}/>
+          
+          <Route path="/manager" element={<Manager/>}/>
           <Route path="/deliveryperson" element={<DeliveryPerson/>}/>
           <Route path="/adminrolechange" element={<AdminRoleChange/>}/>
 
