@@ -1,0 +1,243 @@
+
+create database finalproject;
+use finalproject;
+
+
+
+new Tables
+
+<===============================================>
+
+create table user(
+userId integer primary key auto_increment,
+firstName varchar(100),
+lastName varchar(100),
+email varchar(100),
+password varchar(100),
+mobileNo varchar(20),
+address varchar(200),
+role varchar(20),
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+insert into user (firstName, lastName, email, password, mobileNo, address, role) values ("admin" ,"a", "admin@gmail.com", "a", "1234567890", "a", "admin");
+insert into user (firstName, lastName, email, password, mobileNo, address, role) values ("customer1" ,"customer1", "customer1@gmail.com", "c", "1234567890", "c", "customer");
+insert into user (firstName, lastName, email, password, mobileNo, address, role) values ("c" ,"c", "c@gmail.com", "c", "1234567890", "c", "co_admin");
+insert into user (firstName, lastName, email, password, mobileNo, address, role) values ("d" ,"d", "d@gmail.com", "d", "1234567890", "d", "delivery_person");
+
+
+create table menu
+(
+menuId int primary key auto_increment,
+name varchar(100),
+description varchar(300),
+imageAddress varchar(500),
+type varchar(50),
+category varchar(50),
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+
+create table sizes
+(
+sizeId int primary key auto_increment,
+menuIdFk int,
+size Varchar(50),
+FOREIGN KEY (menuIdFk) REFERENCES menu (menuId) on delete cascade on update cascade,
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+create table variants
+(
+variantId int primary key auto_increment,
+sizeIdFk int,
+variant varchar(100),
+price int,
+FOREIGN KEY (sizeIdFk) REFERENCES sizes (sizeId) on delete cascade on update cascade,
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+
+
+
+create table orders 
+(
+orderId int primary key auto_increment,
+userIdFk int,
+totalAmount int,
+orderStatus varchar(20),
+paymentStatus varchar(20),
+FOREIGN KEY (userIdFk) REFERENCES user (userId) on delete cascade on update cascade,
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+
+
+insert into orders (userIdFk, totalAmount, orderStatus, paymentStatus ) values (1, 200, "placed", "pending");
+
+
+
+insert into orderdetails (orderIdFk, variantId, name, size, variant, price, quantity, totalAmount) values (1, 1, "cheese pizza", "small", "new Hand tossed", 100, 2 , 200);
+
+insert into orderdetails (orderIdFk, variantId, name, size, variant, price, quantity, totalAmount) values (1, 2, "cheese pizza", "small", "new thick crust ", 100, 2 , 200);
+
+
+
+create table orderdetails(
+orderDetailsId int primary key auto_increment,
+orderIdFk int,
+variantId int,
+name varchar(40),
+size varchar(40),
+variant varchar(40),
+price int,
+quantity int,
+totalAmount int,
+FOREIGN KEY (orderIdFk) REFERENCES orders(orderId) on delete cascade on update cascade,
+createdTimestamp timestamp default CURRENT_TIMESTAMP
+);
+
+
+
+
+
+<===============================================>
+
+
+
+insert into menu (name, description, imageAddress, type, category)
+values("Onion pizza","it is very good pizza","./images/cheese pizza.jpg", "pizza", "veg");
+
+
+
+
+
+Table Data
+<--------------------------------------------------------------------------------->
+cheese pizze
+
+Menu
+insert into menu (name, description, imageAddress, type, category)
+values("cheese pizze","it is very good pizza","./images/cheese pizza.jpg", "pizza", "veg");
+
+Size
+Insert into sizes (menuIdFk, size) values(1, "small");
+Insert into sizes (menuIdFk, size) values(1, "medium");
+Insert into sizes (menuIdFk, size) values(1, "large");
+
+Variants
+Insert into variants (sizeIdFk, variant, price) values (1, "new Hand Tossed", 100);
+Insert into variants (sizeIdFk, variant, price) values (1, "New Thic Crust", 100);
+Insert into variants (sizeIdFk, variant, price) values (1, "New Thin Crust", 100);
+Insert into variants (sizeIdFk, variant, price) values (1, "whole wheat", 400);
+
+
+Insert into variants (sizeIdFk, variant, price) values (2, "new Hand Tossed", 200);
+Insert into variants (sizeIdFk, variant, price) values (2, "New Thic Crust", 200);
+
+Insert into variants (sizeIdFk, variant, price) values (3, "new Hand Tossed", 300);
+Insert into variants (sizeIdFk, variant, price) values (3, "New Thic Crust", 300);
+Insert into variants (sizeIdFk, variant, price) values (3, "fully hand made", 500);
+
+<--------------------------------------------------------------------------------->
+
+
+<--------------------------------------------------------------------------------->
+margherita pizza
+
+Menu
+insert into menu (name, description, imageAddress,  type, category)
+values("margherita pizza","it is very good pizza","./images/margherita pizza.jpg","pizza", "veg");
+
+Size
+Insert into sizes (menuIdFk, size) values(2, "small");
+Insert into sizes (menuIdFk, size) values(2, "medium");
+Insert into sizes (menuIdFk, size) values(2, "large");
+
+
+Variants
+
+Insert into variants (sizeIdFk, variant, price) values (4, "new Hand Tossed", 100);
+Insert into variants (sizeIdFk, variant, price) values (4, "New Thic Crust", 100);
+
+Insert into variants (sizeIdFk, variant, price) values (5, "new Hand Tossed", 200);
+Insert into variants (sizeIdFk, variant, price) values (5, "New Thic Crust", 200);
+
+Insert into variants (sizeIdFk, variant, price) values (6, "new Hand Tossed", 300);
+Insert into variants (sizeIdFk, variant, price) values (6, "New Thic Crust", 300);
+
+
+
+<--------------------------------------------------------------------------------->
+
+<--------------------------------------------------------------------------------->
+Paneer pizza
+
+Menu
+insert into menu (name, description, imageAddress,  type, category)
+values("paneer pizza","loaded with extra paneer pizza","./images/paneer pizza.jpg","pizza", "veg");
+
+Size
+Insert into sizes (menuIdFk, size) values(3, "small");
+Insert into sizes (menuIdFk, size) values(3, "medium");
+Insert into sizes (menuIdFk, size) values(3, "large");
+
+
+Variants
+
+Insert into variants (sizeIdFk, variant, price) values (7, "new Hand Tossed", 100);
+Insert into variants (sizeIdFk, variant, price) values (7, "New Thic Crust", 100);
+Insert into variants (sizeIdFk, variant, price) values (7, "100% Wheat", 100);
+
+Insert into variants (sizeIdFk, variant, price) values (8, "new Hand Tossed", 200);
+Insert into variants (sizeIdFk, variant, price) values (8, "New Thic Crust", 200);
+Insert into variants (sizeIdFk, variant, price) values (8, "100% Wheat", 100);
+
+Insert into variants (sizeIdFk, variant, price) values (9, "new Hand Tossed", 300);
+Insert into variants (sizeIdFk, variant, price) values (9, "New Thic Crust", 300);
+Insert into variants (sizeIdFk, variant, price) values (9, "100% Wheat", 100);
+
+
+
+<--------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+<--------------------------------------------------------------------------------->
+Cake
+Menu
+insert into menu (name, description, imageAddress,  type, category)
+values("Chocolate cake","Sweet and Delicious","./images/chocolate cake.jpg","dessert", "veg");
+Sizes
+Insert into sizes (menuIdFk, size) values(4, "small");
+Variants 
+Insert into variants (sizeIdFk, variant, price) values (10, "Choco Lava", 500);
+<--------------------------------------------------------------------------------->
+
+
+<--------------------------------------------------------------------------------->
+FrenchFries
+
+menu Table
+insert into menu (name, description, imageAddress,  type, category)
+values("French Fries","Crispy and Salty","./images/french fries.jpg","sides", "veg");
+
+Sizes Table
+Insert into sizes (menuIdFk, size) values(5, "small");
+
+Variants
+Insert into variants (sizeIdFk, variant, price) values (11, "Salted", 100);
+<--------------------------------------------------------------------------------->
+
+
+
+
+
+
+
