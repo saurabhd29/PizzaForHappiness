@@ -127,14 +127,14 @@ const EditUserProfile = () => {
       <div className="row">
         <div className="col"></div>
         <div className="col">
-          <div className="form">
+          <div className="form border border-primary p-4">
           
-          <h1 className="title">Edit Profile</h1>
+          <h1 className="title text-center m-3">Edit Profile</h1>
               
               
-              <div className="mb-3">
+              <div className="mb-3 ">
                 <label htmlFor="" className="label-control">
-                  first Name
+                  First Name
                 </label>
                 <input
                   onChange={(e) => {
@@ -207,10 +207,8 @@ const EditUserProfile = () => {
               </div> 
 
               <div className="mb-3">
-                <div>
-                  Already Have an Account? <Link to="/login">Login Here</Link>
-                </div>
-                <button onClick={EditUser} className="btn btn-primary">
+                <br></br>
+                <button onClick={EditUser} className="btn btn-primary form-control">
                   Update Profile
                 </button>
 

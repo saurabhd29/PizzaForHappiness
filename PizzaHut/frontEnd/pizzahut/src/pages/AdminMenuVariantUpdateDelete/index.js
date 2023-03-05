@@ -156,8 +156,8 @@ const navigate= useNavigate();
       </div>
 
       <div>
-        <table className="table">
-          <thead>
+        <table class="table table-bordered table-striped table-hover table-responsive">
+          <thead className="table-primary">
             <tr>
               {/* <th scope="col">#</th> */}
               <th scope="col">variantId</th>

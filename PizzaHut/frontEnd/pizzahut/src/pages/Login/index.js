@@ -76,48 +76,49 @@ const Login = () => {
 
   return (
     <div>
-      <h1 className="title">Login</h1>
-
+      <br></br>
+      <br></br>
       <div className="row">
-        <div className="col"></div>
-        <div className="col">
-          <div className="form">
+        <div className="col-xl-4"></div>
+        <div className="col-xl-4">
+          <div className="form border border-primary p-4">
+
+            <h1 className='text-center m-3'> Login</h1>
             <div className="mb-3">
-              <label htmlFor="" className="label-control">
-                Email address
-              </label>
+           
               <input
                 onChange={(e) => {
                   setEmail(e.target.value)
                 }}
                 type="text"
-                className="form-control"
+                className="form-control m-2"
+                placeholder='Email address'
               />
             </div>
 
             <div className="mb-3">
-              <label htmlFor="" className="label-control">
-                Password
-              </label>
+            
               <input
                 onChange={(e) => {
                   setPassword(e.target.value)
                 }}
                 type="password"
-                className="form-control"
+                className="form-control m-2"
+                placeholder='Password'
               />
             </div>
-            <div>dont have account <a href='/Register' >signUp</a></div>
+            <div className='text-center m-2'>Dont have account <a href='/Register' >signUp</a></div>
 
             <div>
-              <button onClick={signinUser} className="btn btn-primary">
+              <button onClick={signinUser} className="btn btn-primary form-control">
                 Signin
               </button>
+              
             </div>
             
           </div>
         </div>
-        <div className="col"></div>
+        <div className="col-xl-4"></div>
       </div>
     </div>
   )

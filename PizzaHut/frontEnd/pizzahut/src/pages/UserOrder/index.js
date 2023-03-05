@@ -75,8 +75,8 @@ return(
             
             <h1>Current Order</h1>
             <div>
-            <table class="table">
-            <thead>
+            <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead className="table-primary">
                       
 
                 <tr>
@@ -128,8 +128,8 @@ return(
 
 <h1>Delivered Orders</h1>
             <div>
-            <table class="table">
-            <thead>
+            <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead className="table-success">
                       
 
                 <tr>

@@ -54,10 +54,11 @@ const Manager = () => {
         const orderStatus = "accepted"
         const orderId = id
         const paymentStatus = "pending";
-
+        
         const body = {
             orderStatus,
             paymentStatus,
+            
         }
 
         toast.warning('please Wait')
@@ -81,10 +82,11 @@ const Manager = () => {
         const orderStatus = "Denied"
         const orderId = id
         const paymentStatus = "Refunded";
-
+        
         const body = {
             orderStatus,
             paymentStatus,
+            
         }
 
         toast.warning('please Wait')
@@ -116,9 +118,9 @@ const Manager = () => {
             <h1>role= {role}</h1>
         </div> */}
 
-               <h1 style={{textAlign:'center'}}>Manager</h1>
-            <table class="table">
-            <thead>
+               <h1 style={{textAlign:'center'}}>Welcome Manager <b>{firstName}</b></h1>
+            <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead className="table-primary">
                       
 
                 <tr>
@@ -127,7 +129,8 @@ const Manager = () => {
                 <th scope="col">TotalAmount</th>
                 <th scope="col">OrderStatus</th>
                 <th scope="col">PaymentStatus</th>
-                <th scope="col">Accept order</th>
+                <th scope="col">Action</th>
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -143,8 +146,8 @@ const Manager = () => {
                             <td>{item.totalAmount}</td>
                             <td>{item.orderStatus}</td>
                             <td>{item.paymentStatus}</td>
-                            <td><button type="button" class="btn btn-dark" onClick={()=>update(item.orderId)} >Accept</button></td>
-                            <td><button type="button" class="btn btn-dark" onClick={()=>reject(item.orderId)} >Deny</button></td>
+                            <td><button type="button" class="btn btn-success" onClick={()=>update(item.orderId)} >Accept</button></td>
+                            <td><button type="button" class="btn btn-danger" onClick={()=>reject(item.orderId,{firstName})} >Deny</button></td>
                             </tr>
                         );
 

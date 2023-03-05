@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify"
 import { Navigate, useNavigate } from "react-router"
 // import AdminPizzaDetails from "../AdminPizzaDetails";
-import Navbar from "../components/NavBar";
+import NavBarAdmin from "../components/NavBarAdmin";
 import { Link } from "react-router-dom";
 
 
@@ -162,16 +162,7 @@ const AdminMenuUpdateDelete = () => {
     // navigate("/AdminPizzaDetails")  
   }
 
-  const goToAdminAddPizzaPage = () => {
 
-    navigate("/adminaddmenu")
-  }
-
-  const goToRoleChangePage = () => {
-
-    navigate("/adminrolechange")
-
-  }
 
   const logoutUser = () => {
 
@@ -189,7 +180,7 @@ const AdminMenuUpdateDelete = () => {
 
   return (
     <div>
-      <Navbar logoutUser={logoutUser} />
+      <NavBarAdmin logoutUser={logoutUser} />
       {/* <div>
         <h1>Welcome</h1>
         <h1>{firstName}</h1>
@@ -200,17 +191,13 @@ const AdminMenuUpdateDelete = () => {
       {/* <div>{currentMenu.type}</div> */}
 
       <div>
-        <div class="text-right">
-          <button type="button" class="btn btn-primary pull-right" onClick={goToAdminAddPizzaPage} >Add New</button>
-        </div>
+      <h1 style={{textAlign:'center'}}>Welcome Admin <b>{firstName}</b></h1>
         <br></br>
-        <div class="text-right">
-          <button type="button" class="btn btn-primary pull-right" onClick={goToRoleChangePage} >Role Change</button>
-        </div>
+        
       </div>
 
-      <table className="table">
-        <thead>
+      <table class="table table-bordered table-striped table-hover table-responsive">
+        <thead className="table-primary">
           <tr>
             {/* <th scope="col">#</th> */}
             <th scope="col">menuId</th>
@@ -256,7 +243,7 @@ const AdminMenuUpdateDelete = () => {
 
                     {/* Table */}
                     <table class="table">
-                      <thead>
+                      <thead className="table-primary">
                         <tr>
                           {/* <th scope="col">#</th> */}
                           <th scope="col">Sizes</th>
@@ -321,7 +308,7 @@ const AdminMenuUpdateDelete = () => {
 
       <div className='table-responsive'>
         <table className='table table-bordered'>
-          <thead>
+          <thead className="table-warning">
             <tr>
               <th>menuId</th>
               <th>Name</th>

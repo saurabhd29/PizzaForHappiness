@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { FunctionsTwoTone } from "@mui/icons-material";
+import NavbarAdmin from "../components/NavBarAdmin";
 
 const AdminRoleChange = () => {
 
@@ -95,23 +96,13 @@ const AdminRoleChange = () => {
 
     return (
         <div>
-            <Navbar logoutUser={logoutUser} />
+            <NavbarAdmin logoutUser={logoutUser} />
             {/* <h1>{newRole}</h1>
      */}
-
             <br></br>
+            <h1 style={{textAlign:'center'}}>Welcome Admin <b>{firstName}</b></h1>
             <br></br>
-
-            <div className="mb-3">
-                <button className="btn btn-primary" >
-                    <Link style={{ color: 'white' }} to={'/AdminMenuUpdateDelete'}>
-                        Back
-                    </Link>
-                </button>
-            </div>
-
-            <br></br>
-            <br></br>
+            
             <table class="table">
                 <thead>
 
@@ -152,7 +143,7 @@ const AdminRoleChange = () => {
                                         <option value={"delivery_person"}>delivery_person</option>
                                     </select>
                                 </td>
-                                <td><button type="button" class="btn btn-warning" onClick={() => { updateRole(user.userId) }}>Update</button></td>
+                                <td><button type="button" class="btn btn-primary" onClick={() => { updateRole(user.userId) }}>Update</button></td>
                             </tr>
                         );
 

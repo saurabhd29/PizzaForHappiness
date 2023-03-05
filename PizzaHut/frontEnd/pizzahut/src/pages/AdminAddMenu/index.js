@@ -3,7 +3,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import StyledWatermark from 'react-awesome-watermark';
+import NavBarAdmin from "../components/NavBarAdmin";
 
 
 
@@ -95,56 +95,37 @@ const AdminAddMenu = () => {
 
       })
 
-
-
-
     }
 
+  }
+  const logoutUser = () => {
 
-
-
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('firstName');
+    sessionStorage.removeItem('role');
+    toast.success("Logged out Successfully")
+    // navigate("/")
+     navigate("/")
 
   }
 
 
-
   return (
-    <div>{/* Starting of Div 1 */}
-
-
+    
+    <div>
+       <NavBarAdmin logoutUser={logoutUser} />
+       <h1 className="title" style={{textAlign:'center'}}>Add Menu Item</h1>
+      <br></br>
 
       <div className="row"> {/* Starting of Div 2 */}
         <div className="col"></div>
         <div className="col" style={{ border:'1px solid #000000'}}>
-        {/* <div>
-            <h1>Watermark Usage</h1>
-      <StyledWatermark
-        text="Watermark Rendering"
-        style={{
-          width: 500,
-          height: 500
-        }}
-        multiple
-      ></StyledWatermark>
-            </div> */}
+        
           <div className="form">
-            <h1 className="title">Add Menu Item</h1>
-
-            {/* <div>
-            <h1>Watermark Usage</h1>
-      <StyledWatermark
-        text="Watermark Rendering"
-        style={{
-          width: 500,
-          height: 500
-        }}
-        multiple
-      ></StyledWatermark>
-            </div> */}
-
+            
             <div className="mb-3">
               <label htmlFor="" className="label-control">
-                name
+                Name
               </label>
               <input
 
@@ -160,7 +141,7 @@ const AdminAddMenu = () => {
 
             <div className="mb-3">
               <label htmlFor="" className="label-control">
-                description
+                Description
               </label>
               <input
                 onChange={(e) => {
@@ -175,8 +156,8 @@ const AdminAddMenu = () => {
             <div className="mb-3">
               <label htmlFor="" className="label-control">
                 imageName (ex: image_Name.jpg)
-                <br></br>
-                copy image in public/images/
+                
+                
               </label>
               <input
                 onChange={(e) => {
@@ -193,11 +174,12 @@ const AdminAddMenu = () => {
                 Type
               </label>
               <br></br>
-              <select style={{width:500}}>
-                <option>Pizza</option>
-                <option>Dessert</option>
-                <option>Sides</option>
-                <option>Beverages</option>
+              <select style={{width:500}} onChange={(e) => {
+                  setType(e.target.value);    }}>
+                <option value="Pizza">Pizza</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Sides">Sides</option>
+                <option value="Beverages">Beverages</option>
                 
               </select>
               {/* <input
@@ -215,9 +197,10 @@ const AdminAddMenu = () => {
                 Category 
               </label>
               <br></br>
-              <select style={{width:500}}>
-                <option>Veg</option>
-                <option>Non-Veg</option>
+              <select style={{width:500}} onChange={(e) => {
+                  setCategory(e.target.value);   }}>
+                <option value="Veg">Veg</option>
+                <option value="Non-Veg">Non-Veg</option>
                 
               </select>
               {/* <input
@@ -235,10 +218,11 @@ const AdminAddMenu = () => {
                 Size 
               </label>
               <br></br>
-              <select style={{width:500}}>
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
+              <select style={{width:500}} onChange={(e) => {
+                  setSize(e.target.value); }}>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
               </select>
               {/* <input
                 onChange={(e) => {
@@ -281,14 +265,10 @@ const AdminAddMenu = () => {
 
 
             <div className="mb-3">
-              <button onClick={addNewMenuItem} className="btn btn-primary" style={{ marginRight: 10 }}>
+              <button onClick={addNewMenuItem} className="btn btn-primary form-control" style={{ marginRight: 10 }}>
                 Add New Menu Item
               </button>
-              <button className="btn btn-primary" >
-                <Link style={{ color: 'white' }} to={'/AdminMenuUpdateDelete'}>
-                  Back
-                </Link>
-              </button>
+              
             </div>
           </div>
         </div>
