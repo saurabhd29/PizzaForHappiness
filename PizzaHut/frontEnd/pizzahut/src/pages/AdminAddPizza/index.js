@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { useEffect } from "react/cjs/react.production.min";
 import Navbar from "../components/NavBar";
-
+import { URL } from "../../config";
 const AdminAddSize = () => {
 
   const { state } = useLocation();
@@ -42,7 +42,7 @@ const AdminAddSize = () => {
         price,
       }
 
-      const url = `http://localhost:8080/sizes/addSizeInDatabase/`
+      const url = `${URL}/sizes/addSizeInDatabase/`
       axios.post(url, body).then((response) => {
 
         const result = response.data

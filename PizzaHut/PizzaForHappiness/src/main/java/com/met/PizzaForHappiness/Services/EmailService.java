@@ -53,7 +53,7 @@ public class EmailService {
 		 
 		 public void sendEmailForOrderDelivered(String email) {
 				SimpleMailMessage message = new SimpleMailMessage(); 
-		      message.setFrom("bachalswapnil@gmail.com");
+		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo(email); 
 		      message.setSubject("Delivered ."); 
 		      message.setText("Your order is delivered");

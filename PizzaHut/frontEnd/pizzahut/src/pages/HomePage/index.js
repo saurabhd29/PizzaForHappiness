@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router'
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer" ;
 import "../components/cart.css"
-import { Scrollbars } from 'react-custom-scrollbars';
+import { URL } from "../../config";
 
 
 const HomePage= ()=>{
@@ -79,7 +79,7 @@ const onRemove= (bodyToCart) => {
 
 
 useEffect( ()=>{
-axios.get("http://localhost:8080/menu/gelAllMenu").then((response)=>{
+axios.get(`${URL}/menu/gelAllMenu`).then((response)=>{
 setEntireMenu(response.data.data); 
 console.log("entireMenu"+response.data.data)
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import react, { useEffect, useState } from "react";
 import "./pizza.css" 
-
+import { URL } from "../../config";
 
 
 const Pizza= ({item, onAdd})=>{
@@ -31,8 +31,8 @@ imageAddress:item.imageAddress,
 const SelevtVatiant= (varId)=>{
 
     setSelectedVariantId(varId);
-
-axios.get(`http://localhost:8080/variants/getVariantById/${varId}`).then((response)=>{   
+    const url= `${URL}/variants/getVariantById/${varId}`
+axios.get(url).then((response)=>{   
 SetSelectedVariantData(response.data.data)
 })
 
@@ -45,14 +45,14 @@ const selectSizes= (e)=>{
 
 var id= e.target.value;
 console.log(id);
-
-axios.get(`http://localhost:8080/variants/getById/${id}`).then((response)=>{
+const url= `${URL}/variants/getById/${id}`
+axios.get(url).then((response)=>{
 setVariants(response.data.data);
 setSelectedVariantId(response.data.data[0].variantId);
 })
 
 
-axios.get(`http://localhost:8080/sizes/getSizeById/${id}`).then((response)=>{
+axios.get(`${URL}/sizes/getSizeById/${id}`).then((response)=>{
 setSelectedSize(response.data.data.size);
 console.log(response.data.data.size);
 })

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import NavBarAdmin from "../components/NavBarAdmin";
-
+import { URL } from "../../config";
 
 
 const AdminAddMenu = () => {
@@ -80,7 +80,8 @@ const AdminAddMenu = () => {
       }
 
       console.log(body)
-      const url = `http://localhost:8080/menu/AddMenuItem`
+      const url = `${URL}/menu/AddMenuItem`
+      
       axios.post(url, body).then((response) => {
 
         const result = response.data

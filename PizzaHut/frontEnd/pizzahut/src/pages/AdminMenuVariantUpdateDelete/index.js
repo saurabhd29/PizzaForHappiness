@@ -4,7 +4,7 @@ import { NavigationType, useLocation, useNavigate } from "react-router";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Navigate } from "react-router";
-
+import { URL } from "../../config";
 
 const AdminMenuVariantUpdateDelete = () => {
   // const id=sessionStorage.getItem("id")
@@ -28,9 +28,10 @@ const navigate= useNavigate();
 
     if(userId!=undefined && role=="admin")
     {
+      const url = `${URL}/variants/getById/${id}`
       const id = sizeId;
     axios
-      .get(`http://localhost:8080/variants/getById/${id}`)
+      .get(url)
       .then((response) => {
         setMenuVarients(response.data.data);
         console.log(response.data)
@@ -51,7 +52,7 @@ const navigate= useNavigate();
 
   const deleteItem= (id) =>{
 
-    const url= `http://localhost:8080/variants/delete/${id}`
+    const url= `${URL}/variants/delete/${id}`
   
     axios.delete(url).then((response)=>{
   
@@ -70,7 +71,8 @@ const navigate= useNavigate();
 
 
   const updateVariant=(id)=>{
-    const url= `http://localhost:8080/variants/getVariantById/${id}`
+    
+    const url= `${URL}/variants/getVariantById/${id}`
     
     axios.get(url).then((response)=>{
       setCurrentVariantUpdate(response.data.data)
@@ -97,7 +99,7 @@ const navigate= useNavigate();
       price,
     }
     
-    const url= `http://localhost:8080/variants/update/`
+    const url= `${URL}/variants/update/`
     
     
     
@@ -116,27 +118,13 @@ const navigate= useNavigate();
               }
     });
     }
-
-
-
-
-    
-    const addNewVariant=()=>{
-
    
+    const addNewVariant=()=>{
+  
       // navigate("/adminaddmenuvariant", { state: { PizzaMenuId: pId} });
       navigate("/adminaddmenuvariant", {state:{sizeId, name, size }});
-   
-    
-      
+        
     }
-
-
-
-
-
-
-
 
   return (
   <div>
@@ -244,18 +232,7 @@ const navigate= useNavigate();
               </div>
               {/* table end div */}
 
-
-
-
         </div>
-
-
-
-
-
-
-
-
 
   </div>
   );

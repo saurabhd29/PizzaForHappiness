@@ -5,7 +5,7 @@ import { Navigate, useNavigate } from "react-router"
 // import AdminPizzaDetails from "../AdminPizzaDetails";
 import NavBarAdmin from "../components/NavBarAdmin";
 import { Link } from "react-router-dom";
-
+import { URL } from "../../config";
 
 const AdminMenuUpdateDelete = () => {
   const [menuData, setMenuData] = useState([]);
@@ -25,7 +25,8 @@ const AdminMenuUpdateDelete = () => {
 
 
   function getMenu() {
-    axios.get("http://localhost:8080/menu/gelAllMenu").then((response) => {
+    const url= `${URL}/menu/gelAllMenu`
+    axios.get(url).then((response) => {
       setMenuData(response.data.data);
       console.log(response.data)
       // setImages(result["data"])
@@ -53,7 +54,7 @@ const AdminMenuUpdateDelete = () => {
 
   const deleteMenu = (id) => {
 
-    const url = `http://localhost:8080/pizzaMenu/delete/${id}`
+    const url = `${URL}/pizzaMenu/delete/${id}`
 
     axios.delete(url).then((response) => {
 
@@ -71,7 +72,7 @@ const AdminMenuUpdateDelete = () => {
 
   const deleteSize = (id) => {
 
-    const url = `http://localhost:8080/sizes/delete/${id}`
+    const url = `${URL}/sizes/delete/${id}`
 
     axios.delete(url).then((response) => {
 
@@ -91,7 +92,7 @@ const AdminMenuUpdateDelete = () => {
   }
 
   const updateMenu = (id) => {
-    const url = `http://localhost:8080/menu/getMenuById/${id}`
+    const url = `${URL}/menu/getMenuById/${id}`
     axios.get(url).then((response) => {
 
       console.log('current updated menu data= ')
@@ -123,7 +124,7 @@ const AdminMenuUpdateDelete = () => {
       category,
     }
 
-    const url = `http://localhost:8080/pizzaMenu/updatePizzaInDatabase`
+    const url = `${URL}/pizzaMenu/updatePizzaInDatabase`
 
 
 

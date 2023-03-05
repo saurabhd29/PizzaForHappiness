@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-
+import { URL } from "../../config";
 
 
 const UserOrder= () =>{
@@ -23,7 +23,7 @@ const UserOrder= () =>{
         }
         
         function userorder (){
-            axios.get(`http://localhost:8080/orders/userOrderById/${userId}`).then((response)=>{
+            axios.get(`${URL}/orders/userOrderById/${userId}`).then((response)=>{
 
                 // console.log(response.data.data);
                 // console.log(response.data);

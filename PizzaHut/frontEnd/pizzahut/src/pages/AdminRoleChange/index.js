@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { FunctionsTwoTone } from "@mui/icons-material";
 import NavbarAdmin from "../components/NavBarAdmin";
-
+import { URL } from "../../config";
 const AdminRoleChange = () => {
 
     const [allUsers, setAllUsers] = useState([]);
@@ -27,7 +27,8 @@ const AdminRoleChange = () => {
 
 
     function getUser(){
-        axios.get('http://localhost:8080/users/getAllUsers').then((response) => {
+        const url= `${URL}/users/getAllUsers`
+        axios.get(url).then((response) => {
             setAllUsers(response.data.data)
         })
     }

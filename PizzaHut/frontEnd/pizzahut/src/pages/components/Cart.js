@@ -6,7 +6,7 @@ import "./cart.css" ;
 import { Scrollbars } from 'react-custom-scrollbars';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-
+import { URL } from "../../config";
 
 const Cart= ({cartItems, onAdd, onRemove, cartFromLocalStorage})=>{
 const TotalPrice =   cartItems.reduce((a,c)=> a+ c.price * c.qty, 0);  
@@ -64,7 +64,7 @@ else{
     else
     {
         toast.warning('please wait---- Working on Order')
-        const url1= `http://localhost:8080/orders/placeOrder`;
+        const url1= `${URL}/orders/placeOrder`;
     axios.post(url1, order).then((response)=>{
     
         const result= response.data

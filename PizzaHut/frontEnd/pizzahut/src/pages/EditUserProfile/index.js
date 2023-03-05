@@ -34,7 +34,7 @@ const EditUserProfile = () => {
   if(userId != undefined)
   {
   // axios.get(`http://localhost:8080/users/${userId}`).then((response)=>{
-  axios.get(`http://localhost:8080/users/${userId}`).then((response)=>{
+  axios.get(`${URL}/users/${userId}`).then((response)=>{
   setCurUser(response.data.data);
   setFirstName(response.data.data.firstName);
   setLastName(response.data.data.lastName);

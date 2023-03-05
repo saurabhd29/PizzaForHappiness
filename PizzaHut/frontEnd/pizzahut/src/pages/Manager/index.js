@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import Navbar from "../components/NavBar";
-
+import { URL } from "../../config";
 
 
 const Manager = () => {
@@ -26,7 +26,7 @@ const Manager = () => {
 
 
         function getOrder(){
-            axios.get(`http://localhost:8080/orders/getAllOrders`).then((response) => {
+            axios.get(`${URL}/orders/getAllOrders`).then((response) => {
                 setAllOrders(response.data.data);
                 console.log('allOrders');
                 console.log(allOrders);
@@ -62,7 +62,7 @@ const Manager = () => {
         }
 
         toast.warning('please Wait')
-        const url = `http://localhost:8080/orders/acceptOrder/${orderId}`
+        const url = `${URL}/orders/acceptOrder/${orderId}`
 
         axios.patch(url, body).then((response) => {
             const result = response.data
@@ -90,7 +90,7 @@ const Manager = () => {
         }
 
         toast.warning('please Wait')
-        const url = `http://localhost:8080/orders/denyOrder/${orderId}`
+        const url = `${URL}/orders/denyOrder/${orderId}`
 
         axios.patch(url, body).then((response) => {
             const result = response.data

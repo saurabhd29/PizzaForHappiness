@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import Navbar from './../components/NavBar'
-
+import { URL } from "../../config";
 
 
 const DeliveryPerson= ()=>{
@@ -27,7 +27,7 @@ const DeliveryPerson= ()=>{
 
 
         function getOrder(){
-            axios.get(`http://localhost:8080/orders/getAllOrders`).then((response)=>{
+            axios.get(`${URL}/orders/getAllOrders`).then((response)=>{
     
                 // console.log(response.data.data);
                 // console.log(response.data);
@@ -76,7 +76,7 @@ const DeliveryPerson= ()=>{
             // console.log("orderStatus"+orderStatus)
             // console.log("paymentStatus"+paymentStatus)
             toast.warning('please Wait')
-            const url=`http://localhost:8080/orders/acceptOrder/${orderId}`
+            const url=`${URL}/orders/acceptOrder/${orderId}`
 
             axios.patch(url, body).then((response)=>{
                 const result= response.data
@@ -100,9 +100,9 @@ const DeliveryPerson= ()=>{
 
             return(<div>
                 <div><Navbar logoutUser={logoutUser}/></div>
-                <div><h1>Delivery Boy</h1></div>
-            <table class="table">
-            <thead>
+                <div><h1 style={{textAlign:'center'}}>Delivery Patner {firstName}</h1></div>
+            <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead className="table-primary">
                       
 
                 <tr>

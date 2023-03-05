@@ -3,7 +3,7 @@ import "./Footer.css"
 
 const Footer = () => (
   <div >
-    <p className = "App">PIZZA HUT WEBSITE FOR YOU</p>
+    <p className = "App">PIZZA FOR HAPPINESS BY @MET-IIT STUDENTS</p>
   </div>
 );
 

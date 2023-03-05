@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 // import { NavigationType } from "react-router";
 import { useLocation, useNavigate } from "react-router";
+import { URL } from "../../config";
 
 const AdminAddMenuVariant = () => {
   const { state } = useLocation();
@@ -33,7 +34,7 @@ const AdminAddMenuVariant = () => {
         }
 
         console.log(body)
-    const url= `http://localhost:8080/variants/AddNewVariant`
+    const url= `${URL}/variants/AddNewVariant`
     axios.post(url,body).then((response)=>{
 
       const result= response.data
