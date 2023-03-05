@@ -35,7 +35,7 @@ const Manager = () => {
 
     useEffect(() => {
 
-        if (userId != undefined && role == 'co_admin') {
+        if (userId != undefined && role == 'Manager') {
             // axios.get(`http://localhost:8080/orders/getAllOrders`).then((response) => {
             //     setAllOrders(response.data.data);
             //     console.log('allOrders');
@@ -44,7 +44,7 @@ const Manager = () => {
             getOrder();
         }
         else {
-            toast.warning("Login as co_admin first")
+            toast.warning("Login as Manager first")
             //navigate("/Login")
         }
     }, []);

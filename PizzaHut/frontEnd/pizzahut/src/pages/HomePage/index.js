@@ -150,7 +150,7 @@ return(
     <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>NON VEG PIZZA</b></div></div></div>   
             <div className="row">
                 {entireMenu.map((item)=>{
-                if(item.type=="pizza" && item.category=='non_veg')
+                if(item.type=="pizza" && item.category=='Non-Veg')
                 {
                     return(
                     <div className="col-md-4" key={item.menuId}>

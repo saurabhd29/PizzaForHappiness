@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 // import { NavigationType } from "react-router";
 import { useLocation, useNavigate } from "react-router";
 
-
-
 const AdminAddMenuVariant = () => {
   const { state } = useLocation();
   const { sizeId, name, size } = state;
@@ -15,10 +13,6 @@ const AdminAddMenuVariant = () => {
   
   const navigate=useNavigate();
   
-
-
-
-
 
   const addNewMenuVariant=()=>{
 
@@ -57,21 +51,9 @@ const AdminAddMenuVariant = () => {
 
     })
 
-
-
-
     }
 
-
-    
-
-
   }
-
-
-
-
-
 
 
  return(
@@ -104,10 +86,6 @@ const AdminAddMenuVariant = () => {
                 />
               </div>
 
-
-
-
-
               <div className="mb-3">
                 <label htmlFor="" className="label-control">
                   price
@@ -121,31 +99,18 @@ const AdminAddMenuVariant = () => {
                 />
               </div>
 
-
               <div className="mb-3">
                 <button onClick={addNewMenuVariant} className="btn btn-primary">
                 Add New Menu Variant
                 </button>
               </div> 
-
-
-
-
-
-
-
-
                 </div>
               </div>
           <div className="col"></div>
       </div>  {/* //end of div 2    */}
             
-        
-        
-
     </div>);  //end of div 1  
 
 }
-
 export default AdminAddMenuVariant
 

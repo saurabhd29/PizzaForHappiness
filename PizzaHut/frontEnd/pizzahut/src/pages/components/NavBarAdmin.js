@@ -37,13 +37,13 @@ return(
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
 
-      
+    <a class="nav-item nav-link dropdown-item" onClick={goto}>Welcome {firstName}</a>
       {/* <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> */}
       <a class="nav-item nav-link" href="#">  <Link to="/adminmenuupdatedelete" className="dropdown-item">Home</Link></a>
       
       <a class="nav-item nav-link" href="#">  <Link to="/adminaddmenu" className="dropdown-item">Add Menu</Link></a>
       <a class="nav-item nav-link " href="#"><Link to="/adminrolechange" className="dropdown-item">Change Role</Link></a>
-      <a class="nav-item nav-link dropdown-item" onClick={goto}>Welcome {firstName}</a>
+      
       {firstName!=null ?  <a class="nav-item nav-link" ><button onClick={() => logoutUser()} className="dropdown-item">Logout</button></a> 
       : <a class="nav-item nav-link" href="#"><Link to="/Login" className="dropdown-item">Login</Link></a> }
     </div>

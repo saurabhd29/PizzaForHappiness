@@ -139,7 +139,7 @@ const AdminRoleChange = () => {
                                 <td>
                                     <select class="form-select" aria-label="Default select example" onClick={(e) => { setNewRole(e.target.value) }}>
                                         <option value={"customer"}>customer</option>
-                                        <option value={"co_admin"}>co_admin</option>
+                                        <option value={"Manager"}>Manager</option>
                                         <option value={"delivery_person"}>delivery_person</option>
                                     </select>
                                 </td>

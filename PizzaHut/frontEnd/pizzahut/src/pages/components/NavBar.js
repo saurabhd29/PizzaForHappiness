@@ -14,7 +14,7 @@ if (role== undefined)
 if (role== "admin")
   navigate("/adminmenuupdatedelete")
   
-  if (role== "co_admin")
+  if (role== "Manager")
   navigate("/Manager")
 
   if (role== "delivery_person")
@@ -36,15 +36,18 @@ return(
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-
-      {firstName!=null ?  <a class="nav-item nav-link" ><button onClick={() => logoutUser()} className="dropdown-item">Logout</button></a> 
-      : <a class="nav-item nav-link" href="#"><Link to="/Login" className="dropdown-item">Login</Link></a> }
+    <a class="nav-item nav-link dropdown-item" onClick={goto}>Welcome {firstName}</a>
+      <a class="nav-item nav-link" href="#">  <Link to="/" className="dropdown-item">Home</Link></a>
+      
       {/* <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> */}
       
       <a class="nav-item nav-link" href="#">  <Link to="/userorder" className="dropdown-item">My Orders</Link></a>
       <a class="nav-item nav-link " href="#"><Link to="/edituserprofile" className="dropdown-item">Edit Profile</Link></a>
-      <a class="nav-item nav-link dropdown-item" onClick={goto}>Welcome {firstName}</a>
       
+      
+      {firstName!=null ?  <a class="nav-item nav-link" ><button onClick={() => logoutUser()} className="dropdown-item">Logout</button></a> 
+      : <a class="nav-item nav-link" href="#"><Link to="/Login" className="dropdown-item">Login</Link></a> }
+
     </div>
   </div>
   </nav>

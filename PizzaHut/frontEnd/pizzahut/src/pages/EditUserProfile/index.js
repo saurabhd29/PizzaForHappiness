@@ -123,7 +123,7 @@ const EditUserProfile = () => {
   return (
     <div>
       <Navbar logoutUser={logoutUser}/>
-
+      <h1 style={{textAlign:'left'}}>Hi  <b>{firstName}</b></h1>    
       <div className="row">
         <div className="col"></div>
         <div className="col">

@@ -55,7 +55,7 @@ const Login = () => {
           {
             navigate("/adminmenuupdatedelete")
           }
-          if(role=='co_admin')
+          if(role=='Manager')
           {
             navigate("/Manager")
             

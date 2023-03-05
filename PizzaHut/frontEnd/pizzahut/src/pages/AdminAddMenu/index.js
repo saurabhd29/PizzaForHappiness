@@ -17,11 +17,11 @@ const AdminAddMenu = () => {
   const [description, setDescription] = useState("");
   // const [imageAddress, setImageAddress]= useState("");
 
-  const [type, setType] = useState("");
-  const [category, setCategory] = useState("");
+  const [type, setType] = useState("Pizza");
+  const [category, setCategory] = useState("Veg");
 
   //for Sizes Table
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState("Small");
 
 
   //for variants Table
@@ -174,7 +174,7 @@ const AdminAddMenu = () => {
                 Type
               </label>
               <br></br>
-              <select style={{width:500}} onChange={(e) => {
+              <select style={{width:500}} onClick={(e) => {
                   setType(e.target.value);    }}>
                 <option value="Pizza">Pizza</option>
                 <option value="Dessert">Dessert</option>
@@ -197,7 +197,7 @@ const AdminAddMenu = () => {
                 Category 
               </label>
               <br></br>
-              <select style={{width:500}} onChange={(e) => {
+              <select style={{width:500}} onClick={(e) => {
                   setCategory(e.target.value);   }}>
                 <option value="Veg">Veg</option>
                 <option value="Non-Veg">Non-Veg</option>
@@ -218,7 +218,7 @@ const AdminAddMenu = () => {
                 Size 
               </label>
               <br></br>
-              <select style={{width:500}} onChange={(e) => {
+              <select style={{width:500}} onClick={(e) => {
                   setSize(e.target.value); }}>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
