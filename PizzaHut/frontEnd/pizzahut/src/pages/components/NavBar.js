@@ -15,7 +15,7 @@ if (role== "admin")
   navigate("/adminmenuupdatedelete")
   
   if (role== "co_admin")
-  navigate("/coadmin")
+  navigate("/Manager")
 
   if (role== "delivery_person")
   navigate("/DeliveryPerson")

@@ -60,10 +60,6 @@ const Manager = () => {
             paymentStatus,
         }
 
-
-        // console.log("orderId"+orderId)
-        // console.log("orderStatus"+orderStatus)
-        // console.log("paymentStatus"+paymentStatus)
         toast.warning('please Wait')
         const url = `http://localhost:8080/orders/acceptOrder/${orderId}`
 
@@ -74,7 +70,33 @@ const Manager = () => {
             if (result['status'] == 'success') {
                 toast.success('Accepted successfully')
                 //   window.location.reload();
+            }
+            else {
+                toast.error(result['error'])
+            }
+        });
+    }
 
+    const reject = (id) => {
+        const orderStatus = "Denied"
+        const orderId = id
+        const paymentStatus = "Refunded";
+
+        const body = {
+            orderStatus,
+            paymentStatus,
+        }
+
+        toast.warning('please Wait')
+        const url = `http://localhost:8080/orders/denyOrder/${orderId}`
+
+        axios.patch(url, body).then((response) => {
+            const result = response.data
+            console.log(result)
+            getOrder();
+            if (result['status'] == 'success') {
+                toast.error('Order Denied successfully')
+                //   window.location.reload();
             }
             else {
                 toast.error(result['error'])
@@ -101,7 +123,7 @@ const Manager = () => {
 
                 <tr>
                 <th scope="col">OrderId</th>
-                <th scope="col">UserId</th>
+                <th scope="col">Items</th>
                 <th scope="col">TotalAmount</th>
                 <th scope="col">OrderStatus</th>
                 <th scope="col">PaymentStatus</th>
@@ -117,11 +139,12 @@ const Manager = () => {
                            return(
                             <tr>
                             <th scope="row">{item.orderId}</th>
-                            <td>{item.user.userId}</td>
+                            <td>{item.items}</td>
                             <td>{item.totalAmount}</td>
                             <td>{item.orderStatus}</td>
                             <td>{item.paymentStatus}</td>
                             <td><button type="button" class="btn btn-dark" onClick={()=>update(item.orderId)} >Accept</button></td>
+                            <td><button type="button" class="btn btn-dark" onClick={()=>reject(item.orderId)} >Deny</button></td>
                             </tr>
                         );
 

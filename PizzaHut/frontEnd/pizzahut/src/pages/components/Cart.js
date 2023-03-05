@@ -50,6 +50,7 @@ else{
     totalAmount:TotalPrice,
     orderStatus: "placed",
     paymentStatus:"pending",
+    
     orderDetails,
     }
     
@@ -230,7 +231,7 @@ return(
     </div>
 
     <div>
-    <button type="button" class="btn btn-outline-success" onClick={onCheckout}>Checkout</button>
+    <button type="button" class="btn btn-outline-success" onClick={onCheckout}>Place Order</button>
     </div>
 
 

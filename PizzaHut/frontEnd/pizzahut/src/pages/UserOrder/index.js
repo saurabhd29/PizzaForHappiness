@@ -82,7 +82,7 @@ return(
                 <tr>
                 
                 <th scope="col">OrderId</th>
-                <th scope="col">UserId</th>
+                <th scope="col">Items</th>
                 <th scope="col">TotalAmount</th>
                 <th scope="col">OrderStatus</th>
                 <th scope="col">PaymentStatus</th>
@@ -91,13 +91,13 @@ return(
             <tbody>
             {allOrders.map((item)=>{
                    
-                   if(item.orderStatus!='delivered') 
+                   if(item.orderStatus=='placed'||item.orderStatus=='accepted') 
                    {
                        
                            return(
                             <tr>
                             <th scope="row">{item.orderId}</th>
-                            <td>{item.user.userId}</td>
+                            <td>{item.items}</td>
                             <td>{item.totalAmount}</td>
                             <td>{item.orderStatus}</td>
                             <td>{item.paymentStatus}</td>
@@ -135,7 +135,7 @@ return(
                 <tr>
                 
                 <th scope="col">OrderId</th>
-                <th scope="col">UserId</th>
+                <th scope="col">Items</th>
                 <th scope="col">TotalAmount</th>
                 <th scope="col">OrderStatus</th>
                 <th scope="col">PaymentStatus</th>
@@ -150,7 +150,7 @@ return(
                            return(
                             <tr>
                             <th scope="row">{item.orderId}</th>
-                            <td>{item.user.userId}</td>
+                            <td>{item.items}</td>
                             <td>{item.totalAmount}</td>
                             <td>{item.orderStatus}</td>
                             <td>{item.paymentStatus}</td>
