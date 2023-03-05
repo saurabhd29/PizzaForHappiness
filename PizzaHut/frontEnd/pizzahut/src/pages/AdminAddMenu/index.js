@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import StyledWatermark from 'react-awesome-watermark';
 
 
 
@@ -114,9 +115,32 @@ const AdminAddMenu = () => {
 
       <div className="row"> {/* Starting of Div 2 */}
         <div className="col"></div>
-        <div className="col">
+        <div className="col" style={{ border:'1px solid #000000'}}>
+        {/* <div>
+            <h1>Watermark Usage</h1>
+      <StyledWatermark
+        text="Watermark Rendering"
+        style={{
+          width: 500,
+          height: 500
+        }}
+        multiple
+      ></StyledWatermark>
+            </div> */}
           <div className="form">
             <h1 className="title">Add Menu Item</h1>
+
+            {/* <div>
+            <h1>Watermark Usage</h1>
+      <StyledWatermark
+        text="Watermark Rendering"
+        style={{
+          width: 500,
+          height: 500
+        }}
+        multiple
+      ></StyledWatermark>
+            </div> */}
 
             <div className="mb-3">
               <label htmlFor="" className="label-control">
@@ -165,44 +189,64 @@ const AdminAddMenu = () => {
 
 
             <div className="mb-3">
-              <label htmlFor="" className="label-control">
-                type (pizza/dessert/sides/beverages)
+              <label htmlFor="" className="label-control" style={{}}>
+                Type
               </label>
-              <input
+              <br></br>
+              <select style={{width:500}}>
+                <option>Pizza</option>
+                <option>Dessert</option>
+                <option>Sides</option>
+                <option>Beverages</option>
+                
+              </select>
+              {/* <input
                 onChange={(e) => {
                   setType(e.target.value);
                 }}
                 type="text"
                 className="form-control"
-              />
+              /> */}
             </div>
 
 
             <div className="mb-3">
               <label htmlFor="" className="label-control">
-                category (veg or non_veg)
+                Category 
               </label>
-              <input
+              <br></br>
+              <select style={{width:500}}>
+                <option>Veg</option>
+                <option>Non-Veg</option>
+                
+              </select>
+              {/* <input
                 onChange={(e) => {
                   setCategory(e.target.value);
                 }}
                 type="text"
                 className="form-control"
-              />
+              /> */}
             </div>
 
 
             <div className="mb-3">
               <label htmlFor="" className="label-control">
-                Size (small/medium/large)
+                Size 
               </label>
-              <input
+              <br></br>
+              <select style={{width:500}}>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+              {/* <input
                 onChange={(e) => {
                   setSize(e.target.value);
                 }}
                 type="text"
                 className="form-control"
-              />
+              /> */}
             </div>
 
 

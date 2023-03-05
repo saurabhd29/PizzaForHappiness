@@ -45,7 +45,7 @@ const Manager = () => {
         }
         else {
             toast.warning("Login as co_admin first")
-            navigate("/Login")
+            //navigate("/Login")
         }
     }, []);
 
