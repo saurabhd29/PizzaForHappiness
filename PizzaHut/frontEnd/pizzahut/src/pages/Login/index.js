@@ -5,7 +5,8 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { URL } from '../../config'
-
+import Navbar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 
 const Login = () => {
@@ -76,8 +77,7 @@ const Login = () => {
 
   return (
     <div>
-      <br></br>
-      <br></br>
+      <Navbar />
       <div className="row">
         <div className="col-xl-4"></div>
         <div className="col-xl-4">
@@ -120,6 +120,7 @@ const Login = () => {
         </div>
         <div className="col-xl-4"></div>
       </div>
+      <Footer/>
     </div>
   )
 }

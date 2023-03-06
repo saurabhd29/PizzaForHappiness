@@ -15,6 +15,7 @@ import AdminRoleChange from './pages/AdminRoleChange'
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Orders from './pages/components/Orders'
 
 
 
@@ -38,7 +39,7 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path="/userorder" element={<UserOrder/>} />
           <Route path="/adminaddsize" element={<AdminAddSize/>}/>
-          
+          <Route path="/Orders" element={<Orders/>}/>
           <Route path="/manager" element={<Manager/>}/>
           <Route path="/deliveryperson" element={<DeliveryPerson/>}/>
           <Route path="/adminrolechange" element={<AdminRoleChange/>}/>

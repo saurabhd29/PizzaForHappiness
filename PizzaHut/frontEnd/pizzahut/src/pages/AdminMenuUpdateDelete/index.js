@@ -6,6 +6,7 @@ import { Navigate, useNavigate } from "react-router"
 import NavBarAdmin from "../components/NavBarAdmin";
 import { Link } from "react-router-dom";
 import { URL } from "../../config";
+import TotalSales from "../components/TotalSales";
 
 const AdminMenuUpdateDelete = () => {
   const [menuData, setMenuData] = useState([]);
@@ -192,6 +193,7 @@ const AdminMenuUpdateDelete = () => {
       {/* <div>{currentMenu.type}</div> */}
 
       <div>
+        <TotalSales/>
       <h1 style={{textAlign:'center'}}>Welcome Admin <b>{firstName}</b></h1>
         <br></br>
         

@@ -49,7 +49,7 @@ else{
     userId : sessionStorage['userId'],
     totalAmount:TotalPrice,
     orderStatus: "placed",
-    paymentStatus:"pending",
+    paymentStatus:"online",
     
     orderDetails,
     }
@@ -96,94 +96,10 @@ else{
 
     }
     
-    
-    // console.log(orderDetails)
-    // console.log('cartItems Before []===');
-    // console.log(cartItems);
-    // console.log('-----------------------------------------------------------------------');
-    // cartItems= [];
-    // console.log('cartItems After []===');
-    // console.log(cartItems);
-    
-    // navigate("/userorder")
-    
-
 
 }
 
-// {cartItems.map((item)=>{
-//     setOrderArray([])
 
-
-//     const order =
-//     {
-//         name:item.name,
-//         size: item.selectedSize,
-//         variant:item.variant,
-//         quantity: item.qty,
-//         price: item.price,
-//         variantId: item.variantId,
-//         totalAmount: item.qty * item.price,        
-//     }
-//     orderDetails.push(order);
-// })}
-
-// console.log(orderDetails);
-
-// const order=
-// {
-// userId : 9,
-// totalAmount:TotalPrice,
-// orderStatus: "placed",
-// paymentStatus:"pending",
-// orderDetails,
-// }
-
-// console.log("order====");
-// console.log(order);
-
-// const url1= `http://localhost:8080/orders/placeOrder`;
-
-
-// axios.post(url1, order).then((response)=>{
-
-//     const result= response.data
-//     console.log(result)
-//     if(result['status']== 'success')
-//     {
-//       toast.success('order placed successfully')
-      
-//     //   console.log(orderDetails)
-//     //   console.log('cartItems Before []===');
-//     //   console.log(cartItems);
-//     //   console.log('-----------------------------------------------------------------------');
-//       cartItems= [];
-//     //   console.log('cartItems After []===');
-//     //   console.log(cartItems);
-
-
-      
-//       navigate("/userorder")
-    
-//     }
-//     else
-//     {
-//       toast.error(result['error'])
-//     }
-
-
-// })
-
-
-// console.log(orderDetails)
-// console.log('cartItems Before []===');
-// console.log(cartItems);
-// console.log('-----------------------------------------------------------------------');
-// cartItems= [];
-// console.log('cartItems After []===');
-// console.log(cartItems);
-
-// // navigate("/userorder")
 
 }
 

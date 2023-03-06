@@ -94,15 +94,15 @@ const Register = () => {
 
       <div className="row">
         <div className="col"></div>
-        <div className="col">
-          <div className="form">
+        <div className="col ">
+          <div className=" form border border-primary p-4">
           
-          <h1 className="title">Register</h1>
+          <h1 className="text-center m-1">Register New User</h1>
               
               
               <div className="mb-3">
                 <label htmlFor="" className="label-control">
-                  first Name
+                  First Name
                 </label>
                 <input
                   onChange={(e) => {
@@ -197,7 +197,8 @@ const Register = () => {
                 <div>
                   Already Have an Account? <Link to="/login">Login Here</Link>
                 </div>
-                <button onClick={registerUser} className="btn btn-primary">
+                <br></br>
+                <button onClick={registerUser} className="btn btn-primary form-control">
                   Register
                 </button>
 

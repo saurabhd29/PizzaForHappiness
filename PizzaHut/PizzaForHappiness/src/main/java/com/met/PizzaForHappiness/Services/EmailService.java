@@ -39,7 +39,7 @@ public class EmailService {
 		}
 		 
 		 
-		 public void sendEmailForDelivery(String userEmail) {
+		 public void sendEmailForDelivery() {
 			 
 			 //delivery person
 				SimpleMailMessage message = new SimpleMailMessage(); 

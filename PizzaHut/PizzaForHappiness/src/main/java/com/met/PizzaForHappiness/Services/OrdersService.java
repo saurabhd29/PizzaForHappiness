@@ -27,11 +27,24 @@ public class OrdersService {
 	public List<Orders> getAllOrders()
 	{
 		
-		List<Orders> orders= ordersDao.findAll();
+		List<Orders> orders= ordersDao.findAll();		
+		
 		return orders;
 	}
 	
 	
+	public int getTotalAmount()
+	{
+		
+		List<Orders> orders= ordersDao.findAll();
+		Orders tot;
+		int t=0;
+		for(int i=0; i<orders.size(); i++) {
+			tot = orders.get(i);
+			t= t + tot.getTotalAmount();
+		}
+		return t;
+	}
 	
 	public Orders save(Orders order)
 	{

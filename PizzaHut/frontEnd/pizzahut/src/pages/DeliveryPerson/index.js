@@ -9,7 +9,7 @@ import { URL } from "../../config";
 
 const DeliveryPerson= ()=>{
 
-
+   
     const [allOrders, setAllOrders] = useState([]);
 
     const { userId, firstName, role} = sessionStorage
@@ -41,14 +41,7 @@ const DeliveryPerson= ()=>{
 
         if(userId != undefined && role=="delivery_person")
         {
-            // axios.get(`http://localhost:8080/orders/getAllOrders`).then((response)=>{
-    
-            //     // console.log(response.data.data);
-            //     // console.log(response.data);
-            //     setAllOrders(response.data.data);
-            //     console.log('allOrders');
-            //     console.log(allOrders);
-            //     })
+            
             getOrder()
         }
         else{
@@ -100,7 +93,9 @@ const DeliveryPerson= ()=>{
 
             return(<div>
                 <div><Navbar logoutUser={logoutUser}/></div>
-                <div><h1 style={{textAlign:'center'}}>Delivery Patner {firstName}</h1></div>
+                <div><h1 style={{textAlign:'center'}}>Delivery Patner {firstName}</h1>
+
+                </div>
             <table class="table table-bordered table-striped table-hover table-responsive">
             <thead className="table-primary">
                       

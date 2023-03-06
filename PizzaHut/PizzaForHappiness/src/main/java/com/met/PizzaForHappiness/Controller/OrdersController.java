@@ -3,6 +3,7 @@ package com.met.PizzaForHappiness.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.met.PizzaForHappiness.Dtos.OrderPlacedDto;
@@ -51,6 +53,24 @@ public class OrdersController {
 		return Response.success(orders);
 
 	}
+	
+	@RequestMapping("/handle")
+	 public ResponseEntity<String> handle() {
+	   
+	   return new ResponseEntity<String>("Hello World", HttpStatus.CREATED);
+	 }
+	
+	@GetMapping("/orders/getTotalAmount")
+	ResponseEntity<String> getTotalAmount() {
+
+		int torders = ordersService.getTotalAmount();
+		
+		String t =String.valueOf(torders);
+			System.out.println(t);	
+		
+		return new ResponseEntity<String>(t, HttpStatus.OK);
+
+	}
 
 	// without cascade it is working perfectly
 
@@ -69,8 +89,7 @@ public class OrdersController {
 			item = item + " , "+ orderItem1.getName();
 					
 		}
-			
-		
+				
 		Orders order = new Orders();
 		order.setUser(newUser);
 		order.setItems(item);
@@ -157,7 +176,10 @@ public class OrdersController {
 				return Response.error("Orders not found");
 			}
 			if(updateOrder.getOrderStatus().equals("accepted"))
-			emailService.sendEmailForAcceptOrder(user.getEmail());
+			{
+				emailService.sendEmailForAcceptOrder(user.getEmail());
+				emailService.sendEmailForDelivery();
+			}
 			
 			if(updateOrder.getOrderStatus().equals("delivered"))
 			emailService.sendEmailForOrderDelivered(user.getEmail());
