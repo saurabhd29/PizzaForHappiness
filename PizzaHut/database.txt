@@ -2,7 +2,7 @@
 create database finalproject;
 use finalproject;
 
-
+alter table finalproject.orders modify column createdTimestamp DATETIME default CURRENT_TIMESTAMP;
 
 new Tables
 
