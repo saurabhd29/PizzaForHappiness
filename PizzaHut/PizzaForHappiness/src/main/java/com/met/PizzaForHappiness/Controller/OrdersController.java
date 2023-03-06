@@ -99,10 +99,10 @@ public class OrdersController {
 		Orders placedOrderDetails = ordersService.save(order);
 		
 		if(placedOrderDetails != null) {
-			emailService.sendEmailForNewOrder(newUser.getEmail() , orderPlaced.getTotalAmount());
+			
 
 			int placedorderId = placedOrderDetails.getOrderId();
-
+			emailService.sendEmailForNewOrder(newUser.getEmail() , orderPlaced.getTotalAmount(),placedorderId);
 			System.out.println("placed Order Id= ");
 			System.out.println(placedorderId);
 
@@ -128,6 +128,7 @@ public class OrdersController {
 				System.out.println(count);
 				return Response.success(null);
 			}
+			
 		}		
 		return Response.error("Orders not placed");
 

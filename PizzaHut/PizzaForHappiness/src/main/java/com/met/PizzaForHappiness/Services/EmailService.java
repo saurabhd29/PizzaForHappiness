@@ -11,12 +11,12 @@ public class EmailService {
 		@Autowired
 		 private JavaMailSender emailSender;
 
-		 public void sendEmailForNewOrder(String email , int totalAmount) {
+		 public void sendEmailForNewOrder(String email , int totalAmount, int orderid) {
 			SimpleMailMessage message = new SimpleMailMessage(); 
 	      message.setFrom("pizzaforhappiness@gmail.com");
 	      message.setTo(email); 
-	      message.setSubject("Order Placed Successfully !"); 
-	      message.setText("Your Order has been placed and it will be delivered within 30 min , plz pay the Rs." + totalAmount + " at delivery in cash . Thank You for Choosing Us!");
+	      message.setSubject("Order "+ orderid +" Placed Successfully !"); 
+	      message.setText("Your Order "+ orderid +" has been placed and it will be delivered within 30 min , plz pay the Rs." + totalAmount + " at delivery in cash . Thank You for Choosing Us!");
 	      emailSender.send(message);
 	}
 		 
