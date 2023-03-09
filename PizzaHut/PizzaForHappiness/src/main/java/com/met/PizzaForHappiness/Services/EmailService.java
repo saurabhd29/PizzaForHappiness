@@ -69,7 +69,7 @@ public class EmailService {
 		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo(email); 
 		      message.setSubject("Order No "+ orderid +" Delivered ."); 
-		      message.setText("Your order "+ orderid +" is delivered\nIf not delivered by Delivery Patner  Contact our Manager/HR Mr.Ajit Sujit Shinde at 139.\n\n ThankYou for choosing US.\nOrder Again!");
+		      message.setText("Your order No "+ orderid +" is delivered\nIf not delivered by Delivery Patner  Contact our Manager/HR Mr.Ajit Sujit Shinde at 139.\n\n ThankYou for choosing US.\nOrder Again!");
 		      emailSender.send(message);
 		}
 		 
