@@ -73,7 +73,7 @@ public class UserController {
 		       mailMsg.setTo(user.getEmail());
 		       String sub = "Registration Succesful " + user.getFirstName();
 		       mailMsg.setSubject(sub);
-		       mailMsg.setText("Welcome to our Pizza, this mail sent by Pizza Hut on Successful Registration");
+		       mailMsg.setText("Welcome to our Pizza, this mail sent by Pizza For Happiness on Successful Registration");
 		       sender.send(mailMsg);
 			return Response.success(result);
 		}

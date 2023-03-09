@@ -39,9 +39,13 @@ public class OrdersService {
 		List<Orders> orders= ordersDao.findAll();
 		Orders tot;
 		int t=0;
-		for(int i=0; i<orders.size(); i++) {
+		for(int i=0; i<orders.size(); i++) {		
 			tot = orders.get(i);
-			t= t + tot.getTotalAmount();
+			if(tot.getOrderStatus().equalsIgnoreCase("delivered"))
+			{
+				t= t + tot.getTotalAmount();
+			}
+			
 		}
 		return t;
 	}

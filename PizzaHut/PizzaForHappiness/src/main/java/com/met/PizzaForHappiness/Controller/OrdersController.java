@@ -178,7 +178,7 @@ public class OrdersController {
 			}
 			if(updateOrder.getOrderStatus().equals("accepted"))
 			{
-				emailService.sendEmailForAcceptOrder(user.getEmail());
+				emailService.sendEmailForAcceptOrder(user.getEmail(),orderId);
 				emailService.sendEmailForAcceptOrder(orderId);
 				emailService.sendEmailForDelivery();
 			}
@@ -215,7 +215,7 @@ public class OrdersController {
 				return Response.error("Orders not found");
 			}
 			if(updateOrder.getOrderStatus().equals("Denied"))
-			emailService.sendEmailForDeniedOrder(user.getEmail());
+			emailService.sendEmailForDeniedOrder(user.getEmail(), orderId);
 		
 			return Response.success(updatedOrder);
 

@@ -19,22 +19,23 @@ public class EmailService {
 	      message.setText("Your Order No "+ orderid +" has been placed and it will be delivered within 30 min , plz pay the Rs." + totalAmount + " at delivery in cash . Thank You for Choosing Us!");
 	      emailSender.send(message);
 	}
-		 
-		 public void sendEmailForAcceptOrder(String email) {
+		 			
+		 public void sendEmailForAcceptOrder(String email, int orderId) {
 				SimpleMailMessage message = new SimpleMailMessage(); 
 		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo(email); 
-		      message.setSubject("Order Accepted."); 
-		      message.setText("Your Order has been accepted By PizzaHut");
+		      message.setSubject("Order No "+orderId+" Accepted."); 
+		      message.setText("Your Order No "+orderId+" has been accepted By PizzaHut");
 		      emailSender.send(message);
 		}
 		 //sendEmailForDeniedOrder
-		 public void sendEmailForDeniedOrder(String email) {
+		 public void sendEmailForDeniedOrder(String email, int orderId) {
 				SimpleMailMessage message = new SimpleMailMessage(); 
 		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo(email); 
-		      message.setSubject("Order denied."); 
-		      message.setText("Unfortunately your Order has been cancelled By PizzaHut. Inconvience caused is highly regretted");
+		      message.setSubject("Order No "+orderId+" denied."); 
+		      message.setText("Unfortunately your Order No "+orderId+" has been cancelled By Pizza.\n Inconvience caused is highly regretted"
+		      		+ "\n\n Contact our customer care Sujit at 139");
 		      emailSender.send(message);
 		}
 		 
@@ -53,7 +54,7 @@ public class EmailService {
 		 
 		 public void sendEmailForAcceptOrder(int orderid) {
 			 
-			 //delivery person
+			 
 				SimpleMailMessage message = new SimpleMailMessage(); 
 		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo("sujitshinde2000@gmail.com"); 
