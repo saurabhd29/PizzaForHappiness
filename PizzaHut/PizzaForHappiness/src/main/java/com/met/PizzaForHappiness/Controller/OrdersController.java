@@ -179,12 +179,13 @@ public class OrdersController {
 			if(updateOrder.getOrderStatus().equals("accepted"))
 			{
 				emailService.sendEmailForAcceptOrder(user.getEmail());
+				emailService.sendEmailForAcceptOrder(orderId);
 				emailService.sendEmailForDelivery();
 			}
 			
 			if(updateOrder.getOrderStatus().equals("delivered"))
-			emailService.sendEmailForOrderDelivered(user.getEmail());
-			
+			emailService.sendEmailForOrderDelivered(user.getEmail(),orderId);
+			emailService.sendEmailManageForOrderDelivered(orderId);
 		return Response.success(updatedOrder);
 
 		}
@@ -215,8 +216,7 @@ public class OrdersController {
 			}
 			if(updateOrder.getOrderStatus().equals("Denied"))
 			emailService.sendEmailForDeniedOrder(user.getEmail());
-			if(updateOrder.getOrderStatus().equals("delivered"))
-			emailService.sendEmailForOrderDelivered(user.getEmail());
+		
 			return Response.success(updatedOrder);
 
 		}

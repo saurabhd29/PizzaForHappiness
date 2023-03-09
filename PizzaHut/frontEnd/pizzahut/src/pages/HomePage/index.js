@@ -1,10 +1,10 @@
-import react from "react";
+
 import { useState, useEffect } from "react";
 import "./HomePage.css"
 import axios from "axios";
 import Pizza from '../components/Pizza';
 import Cart from "../components/Cart";
-import { Link } from "react-router-dom";
+
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router'
 import Navbar from "../components/NavBar";
@@ -18,7 +18,7 @@ const HomePage= ()=>{
     const cartFromLocalStorage= JSON.parse(localStorage.getItem("cartItems") || "[]" )
 const[entireMenu, setEntireMenu]= useState([]);
 const [cartItems, setCartItems]= useState(cartFromLocalStorage);
-const{ userId, firstName, role }= sessionStorage
+
 const navigate = useNavigate();
 
 
@@ -41,14 +41,6 @@ const onAdd= (bodyToCart) => {
     }
 
 
-
-    // const cartItem={
-    //     item,
-    //     selectedSize,
-    //     selectedVariantData,
-    // }
-
-    // cartItems.push(bodyToCart);
     console.log(cartItems);
     console.log(bodyToCart.name);
 
@@ -124,7 +116,7 @@ return(
                     <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>VEG PIZZA </b></div></div></div>
                     <div className="row">
                 {entireMenu.map((item)=>{
-                if(item.type=="pizza" && item.category=='veg' )
+                if(item.type==="Pizza" && item.category==='Veg' )
                 {
                     return(
                     <div className="col-md-6" key={item.menuId}>
@@ -150,7 +142,7 @@ return(
     <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>NON VEG PIZZA</b></div></div></div>   
             <div className="row">
                 {entireMenu.map((item)=>{
-                if(item.type=="pizza" && item.category=='Non-Veg')
+                if(item.type==="Pizza" && item.category==='Non-Veg')
                 {
                     return(
                     <div className="col-md-4" key={item.menuId}>
@@ -174,7 +166,7 @@ return(
         <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>DESSERT SECTION</b></div></div></div>   
             <div className="row">
                 { entireMenu && entireMenu.map((item)=>{
-                if(item.type=="dessert")
+                if(item.type==="Dessert")
                 {
                     return(
                     <div className="col-md-4" key={item.menuId}>
@@ -203,7 +195,7 @@ return(
         <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>SIDES SECTION</b></div></div></div>   
             <div className="row">
                 { entireMenu && entireMenu.map((item)=>{
-                if(item.type=="sides")
+                if(item.type==="Sides")
                 {
                     return(
                     <div className="col-md-4" key={item.menuId}>
@@ -227,7 +219,7 @@ return(
         <div class="ref"><div class="menu-hr"></div><div class="cat-bar"><div class="menu-catname "><b>BEVERAGES</b></div></div></div>   
             <div className="row">
                 {entireMenu.map((item)=>{
-                if(item.type=="beverages")
+                if(item.type==="Beverages")
                 {
                     return(
                     <div className="col-md-4" key={item.menuId}>
