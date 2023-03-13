@@ -63,7 +63,16 @@ else{
     }
     else
     {
-        toast.warning('please wait---- Working on Order')
+        toast.info('please wait---- Working on Order', {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
         const url1= `${URL}/orders/placeOrder`;
     axios.post(url1, order).then((response)=>{
     

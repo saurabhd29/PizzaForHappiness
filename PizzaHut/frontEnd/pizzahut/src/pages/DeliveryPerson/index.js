@@ -93,7 +93,7 @@ const DeliveryPerson= ()=>{
 
             return(<div>
                 <div><Navbar logoutUser={logoutUser}/></div>
-                <div><h1 style={{textAlign:'center'}}>Delivery Patner {firstName}</h1>
+                <div><h1 style={{textAlign:'center'}}>Delivery Partner {firstName}</h1>
 
                 </div>
             <table class="table table-bordered table-striped table-hover table-responsive">

@@ -28,8 +28,8 @@ imageAddress:item.imageAddress,
 
 
 
-const SelevtVatiant= (varId)=>{
-
+const SelectVariant= (varId)=>{
+    console.log("Variant called");
     setSelectedVariantId(varId);
     const url= `${URL}/variants/getVariantById/${varId}`
 axios.get(url).then((response)=>{   
@@ -49,6 +49,9 @@ const url= `${URL}/variants/getById/${id}`
 axios.get(url).then((response)=>{
 setVariants(response.data.data);
 setSelectedVariantId(response.data.data[0].variantId);
+
+console.log("Called : "+response.data.data[0].variantId);
+SelectVariant(response.data.data[0].variantId)
 })
 
 
@@ -92,7 +95,7 @@ console.log(response.data.data.size);
                 {/* <div  className="w-100"> */}
                 <div >
                 {/* <p>Variants</p> */}
-                <select class="form-select" aria-label="Default select example" onChange={(e)=>{SelevtVatiant(e.target.value)}}>
+                <select class="form-select" aria-label="Default select example"  onClick={(e)=>{SelectVariant(e.target.value)}}>
                     {variants && variants.map((s)=>{
                         return(
                             

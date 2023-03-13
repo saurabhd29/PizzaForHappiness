@@ -90,7 +90,7 @@ const EditUserProfile = () => {
             if(result['status']== 'success')
             {
               toast.success('Successfully Updated')
-              navigate('/HomePage')
+              navigate('/edituserprofile')
             }
             else
             {

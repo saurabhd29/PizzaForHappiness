@@ -54,7 +54,9 @@ const Orders = () => {
 
     return (<div>
                 <div>
-                <NavbarAdmin logoutUser={logoutUser} />
+                    {role == "admin" ? <NavbarAdmin logoutUser={logoutUser} /> :
+                     <Navbar logoutUser={logoutUser} />}
+                
             </div>
         {/* <div>
             <h1>userId={userId}</h1>

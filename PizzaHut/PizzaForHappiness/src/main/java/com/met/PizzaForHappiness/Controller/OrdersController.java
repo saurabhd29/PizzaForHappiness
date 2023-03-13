@@ -179,13 +179,16 @@ public class OrdersController {
 			if(updateOrder.getOrderStatus().equals("accepted"))
 			{
 				emailService.sendEmailForAcceptOrder(user.getEmail(),orderId);
-				emailService.sendEmailForAcceptOrder(orderId);
+				emailService.sendEmailManagerForAcceptOrder(orderId);
 				emailService.sendEmailForDelivery();
 			}
 			
 			if(updateOrder.getOrderStatus().equals("delivered"))
-			emailService.sendEmailForOrderDelivered(user.getEmail(),orderId);
-			emailService.sendEmailManageForOrderDelivered(orderId);
+			{
+				emailService.sendEmailForOrderDelivered(user.getEmail(),orderId);
+				emailService.sendEmailManagerForOrderDelivered(orderId);
+			}
+			
 		return Response.success(updatedOrder);
 
 		}

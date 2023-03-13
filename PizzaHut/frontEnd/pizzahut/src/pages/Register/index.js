@@ -39,7 +39,19 @@ const Register = () => {
     toast.warning('please enter address')
     }else if(email.length==0){
     toast.warning('please enter email')
+    }else if(password!=confirmPassword){
+    toast.warning('password did not match')
     }else{ 
+      toast.info('Registration in process', {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        })
       const body = {
         firstName,
         lastName,
@@ -92,7 +104,7 @@ const Register = () => {
     <div>
       <Navbar logoutUser={logoutUser}/>
 
-      <div className="row">
+      <div className="row ">
         <div className="col"></div>
         <div className="col ">
           <div className=" form border border-primary p-4">
@@ -176,6 +188,7 @@ const Register = () => {
                 }}
                 type="text"
                 className="form-control"
+                maxlength="10" 
                 />
               </div> 
 

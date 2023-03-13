@@ -25,7 +25,7 @@ const AdminAddMenu = () => {
 
 
   //for variants Table
-  const [variant, setVariant] = useState("None");
+  const [variant, setVariant] = useState("");
   const [price, setPrice] = useState("");
 
 
@@ -239,21 +239,14 @@ const AdminAddMenu = () => {
               <label htmlFor="" className="label-control">
                 variant
               </label>
-              <select style={{width:500}} onClick={(e) => {
-                  setVariant(e.target.value); }}>
-                <option value="None">None</option>
-                <option value="New Hand Tossed">New Hand Tossed</option>
-                <option value="New Thin Crust">New Thin Crust</option>
-                <option value="whole wheat">whole wheat</option>
-                
-              </select>
-              {/* <input
+              
+              <input
                 onChange={(e) => {
                   setVariant(e.target.value);
                 }}
                 type="text"
                 className="form-control"
-              /> */}
+              />
             </div>
 
 

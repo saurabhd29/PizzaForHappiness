@@ -52,7 +52,7 @@ public class EmailService {
 		      
 		}
 		 
-		 public void sendEmailForAcceptOrder(int orderid) {
+		 public void sendEmailManagerForAcceptOrder(int orderid) {
 			 
 			 
 				SimpleMailMessage message = new SimpleMailMessage(); 
@@ -73,7 +73,7 @@ public class EmailService {
 		      emailSender.send(message);
 		}
 		 
-		 public void sendEmailManageForOrderDelivered(int orderid) {
+		 public void sendEmailManagerForOrderDelivered(int orderid) {
 				SimpleMailMessage message = new SimpleMailMessage(); 
 		      message.setFrom("pizzaforhappiness@gmail.com");
 		      message.setTo("sujitshinde2000@gmail.com"); 

@@ -20,7 +20,16 @@ const Manager = () => {
         sessionStorage.removeItem('userId');
         sessionStorage.removeItem('firstName');
         sessionStorage.removeItem('role');
-        toast.success("Logged out Successfully")
+        toast.success("Logged out Successfully", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            } )
         navigate("/")
         
         }
@@ -42,7 +51,7 @@ const Manager = () => {
         }
         else {
             toast.warning("Login as Manager first")
-            //navigate("/Login")
+            navigate("/Login")
         }
     }, []);
 
@@ -58,7 +67,16 @@ const Manager = () => {
             
         }
 
-        toast.warning('please Wait')
+        toast.info('please Wait', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
         const url = `${URL}/orders/acceptOrder/${orderId}`
 
         axios.patch(url, body).then((response) => {
@@ -66,7 +84,16 @@ const Manager = () => {
             console.log(result)
             getOrder();
             if (result['status'] == 'success') {
-                toast.success('Accepted successfully')
+                toast.success('Accepted successfully', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    })
                 //   window.location.reload();
             }
             else {
@@ -86,7 +113,16 @@ const Manager = () => {
             
         }
 
-        toast.warning('please Wait')
+        toast.warning('please Wait', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
         const url = `${URL}/orders/denyOrder/${orderId}`
 
         axios.patch(url, body).then((response) => {
@@ -94,7 +130,16 @@ const Manager = () => {
             console.log(result)
             getOrder();
             if (result['status'] == 'success') {
-                toast.error('Order Denied successfully')
+                toast.error('Order Denied successfully', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    })
                 //   window.location.reload();
             }
             else {

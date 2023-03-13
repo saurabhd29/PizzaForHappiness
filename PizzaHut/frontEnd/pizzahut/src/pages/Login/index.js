@@ -35,7 +35,16 @@ const Login = () => {
         const result = response.data
         console.log(result)
         if (result['status'] == 'success') {
-          toast.success('Welcome  '+ result['data'].firstName )
+          toast.success('Welcome  '+ result['data'].firstName , {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            } )
 
           // get the data sent by server
           const { userId, firstName, role } = result['data']

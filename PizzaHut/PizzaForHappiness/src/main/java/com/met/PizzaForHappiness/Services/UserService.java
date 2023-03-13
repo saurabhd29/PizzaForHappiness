@@ -39,7 +39,7 @@ public class UserService {
 		if (user1 != null) {
 			return null;
 		} else {
-			String rawPassword = user.getPassword();
+			String rawPassword = user.getPassword(); //Qwerty@123
 			String encPassword = passwordencoder.encode(rawPassword);
 			user.setPassword(encPassword);
 			User user2 = userDao.save(user);
@@ -52,6 +52,7 @@ public class UserService {
 
 	public UserDTO findUserByEmailAndPassword(Credentials cred) {
 		User user = userDao.findByEmail(cred.getEmail());
+		//User user = userDao.findByLastName(cred.getEmail());
 		String password = cred.getPassword();
 		System.out.println("inside findUserByEmailAndPassword");
 		if (user != null && passwordencoder.matches(password, user.getPassword())) {
@@ -87,7 +88,7 @@ public class UserService {
 		user1.setAddress(user.getAddress());
 
 		user1 = userDao.save(user1);
-
+		
 		return user1;
 	}
 	
