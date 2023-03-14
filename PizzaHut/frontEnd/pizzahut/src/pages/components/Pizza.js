@@ -71,7 +71,7 @@ console.log(response.data.data.size);
                 <h1>{selectedVariantData.variant}</h1> */}
                 
                 {/* <h5 style={{textAlign : "center", textTransform:"uppercase"   }}>{item.name}</h5> */}
-                <img src={item.imageAddress} className="img-fluid" style={{borderRadius:"5px",height:'200px', width:'100%', alignItems: "center"}}/>
+                <img src={item.imageAddress} className="img-fluid" style={{borderRadius:"5px",height:'200px', width:'250px', alignItems: "center"}}/>
                 <div className=".itm-dsc__nm "><b>{item.name}</b></div>
                 <div className=".itm-dsc__dscrptn">{item.description}</div>
                 
@@ -95,7 +95,7 @@ console.log(response.data.data.size);
                 {/* <div  className="w-100"> */}
                 <div >
                 {/* <p>Variants</p> */}
-                <select class="form-select" aria-label="Default select example"  onClick={(e)=>{SelectVariant(e.target.value)}}>
+                <select class="form-select" aria-label="Default select example"  onLoad={(e)=>{SelectVariant(e.target.value)}}>
                     {variants && variants.map((s)=>{
                         return(
                             

@@ -59,7 +59,7 @@ const Manager = () => {
     const update = (id) => {
         const orderStatus = "accepted"
         const orderId = id
-        const paymentStatus = "pending";
+        const paymentStatus = "online";
         
         const body = {
             orderStatus,

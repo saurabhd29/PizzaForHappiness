@@ -51,9 +51,7 @@ const AdminAddMenu = () => {
     else if (size.length == 0) {
       toast.warning('please enter Size (small, Medium, or Large)')
     }
-    else if (variant.length == 0) {
-      toast.warning('please enter variant')
-    }
+    
     else if (price.length == 0) {
       toast.warning('please enter price of variant')
     }

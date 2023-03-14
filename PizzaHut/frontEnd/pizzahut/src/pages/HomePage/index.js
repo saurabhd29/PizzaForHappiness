@@ -119,7 +119,7 @@ return(
                 if(item.type==="Pizza" && item.category==='Veg' )
                 {
                     return(
-                    <div className="col-md-6" key={item.menuId}>
+                    <div className="col-md-4" key={item.menuId}>
                             <div>
                                 <Pizza onAdd={onAdd} item={item}/>                                 
                             </div>
